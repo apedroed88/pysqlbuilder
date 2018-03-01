@@ -45,7 +45,7 @@ setup(
 
     # Application author details:
     author="apedroed88",
-    author_email="apedroed88",
+    author_email="apedroed88@gmail.com",
 
     # License
     license='Apache License Version 2.0',
