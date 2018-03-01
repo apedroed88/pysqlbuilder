@@ -2,7 +2,6 @@ language: python
 
 python:
     - "2.7"
-    - "3.3"
     - "3.4"
     - "3.5"
     - "3.6"
@@ -13,8 +12,5 @@ install:
     - "pip install coveralls"
     - "pip install pytest"
 
-script:
-#    - "coverage run --source=pysqlbuilder setup.py test"
-    - "pytest"
-after_success:
-    coveralls
+script:    
+    - pytest
