@@ -1,7 +1,7 @@
 #!/usr/bin/env python3
 # -*- coding: utf-8 -*-
 #
-# pypika documentation build configuration file, created by
+# pysqlbuilder documentation build configuration file, created by
 # sphinx-quickstart on Wed Jul  6 17:51:50 2016.
 #
 # This file is execfile()d with the current directory set to its
@@ -54,7 +54,7 @@ source_suffix = '.rst'
 master_doc = 'index'
 
 # General information about the project.
-project = 'PyPika'
+project = 'pysqlbuilder'
 copyright = '2016, KAYAK Germany GmbH'
 author = 'Timothy Heys'
 
@@ -207,7 +207,7 @@ html_theme = 'sphinx_rtd_theme'
 # html_search_scorer = 'scorer.js'
 
 # Output file base name for HTML help builder.
-htmlhelp_basename = 'pypikadoc'
+htmlhelp_basename = 'pysqlbuilderdoc'
 
 # -- Options for LaTeX output ---------------------------------------------
 
@@ -229,7 +229,7 @@ latex_elements = {
 # (source start file, target name, title,
 #  author, documentclass [howto, manual, or own class]).
 latex_documents = [
-    (master_doc, 'pypika.tex', 'pypika Documentation',
+    (master_doc, 'pysqlbuilder.tex', 'pysqlbuilder Documentation',
      'Timothy Heys', 'manual'),
 ]
 
@@ -259,7 +259,7 @@ latex_documents = [
 # One entry per manual page. List of tuples
 # (source start file, name, description, authors, manual section).
 man_pages = [
-    (master_doc, 'pypika', 'pypika Documentation',
+    (master_doc, 'pysqlbuilder', 'pysqlbuilder Documentation',
      [author], 1)
 ]
 
@@ -273,8 +273,8 @@ man_pages = [
 # (source start file, target name, title, author,
 #  dir menu entry, description, category)
 texinfo_documents = [
-    (master_doc, 'pypika', 'pypika Documentation',
-     author, 'pypika', 'One line description of project.',
+    (master_doc, 'pysqlbuilder', 'pysqlbuilder Documentation',
+     author, 'pysqlbuilder', 'One line description of project.',
      'Miscellaneous'),
 ]
 

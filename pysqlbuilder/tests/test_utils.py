@@ -1,7 +1,7 @@
 # coding: utf8
 import unittest
 
-from pypika import utils
+from pysqlbuilder import utils
 
 __author__ = "Timothy Heys"
 __email__ = "theys@kayak.com"

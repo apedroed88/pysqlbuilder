@@ -1,7 +1,7 @@
 # coding: utf8
 import unittest
 
-from pypika import (
+from pysqlbuilder import (
     Interval,
     JoinException,
     JoinType,

@@ -1,7 +1,7 @@
 # coding: utf-8
 import unittest
 
-from pypika import Query, Tables, analytics as an, JoinType, Order
+from pysqlbuilder import Query, Tables, analytics as an, JoinType, Order
 
 __author__ = "Timothy Heys"
 __email__ = "theys@kayak.com"

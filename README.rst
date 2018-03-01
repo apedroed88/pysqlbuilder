@@ -1,4 +1,4 @@
-PyPika - Python Query Builder
+pysqlbuilder - Python Query Builder
 =============================
 
 .. _intro_start:
@@ -10,14 +10,14 @@ Abstract
 
 What is |Brand|?
 
-|Brand| is a Python API for building SQL queries. The motivation behind |Brand| is to provide a simple interface for
+|Brand| is a PyPika fork for building SQL queries. The motivation behind |Brand| is to provide a simple interface for
 building SQL queries without limiting the flexibility of handwritten SQL. Designed with data analysis in mind, |Brand|
 leverages the builder design pattern to construct queries to avoid messy string formatting and concatenation. It is also
 easily extended to take full advantage of specific features of SQL database vendors.
 
 .. _intro_end:
 
-Read the docs: http://pypika.readthedocs.io/en/latest/
+Read the docs: http://pysqlbuilder.readthedocs.io/en/latest/
 
 Installation
 ------------
@@ -30,7 +30,7 @@ To install |Brand| run the following command:
 
 .. code-block:: bash
 
-    pip install pypika
+    pip install pysqlbuilder
 
 
 .. _installation_end:
@@ -41,19 +41,19 @@ Tutorial
 
 .. _tutorial_start:
 
-The main classes in pypika are ``pypika.Query``, ``pypika.Table``, and ``pypika.Field``.
+The main classes in pysqlbuilder are ``pysqlbuilder.Query``, ``pysqlbuilder.Table``, and ``pysqlbuilder.Field``.
 
 .. code-block:: python
 
-    from pypika import Query, Table, Field
+    from pysqlbuilder import Query, Table, Field
 
 
 Selecting Data
 ^^^^^^^^^^^^^^
 
-The entry point for building queries is ``pypika.Query``.  In order to select columns from a table, the table must
+The entry point for building queries is ``pysqlbuilder.Query``.  In order to select columns from a table, the table must
 first be added to the query.  For simple queries with only one table, tables and columns can be references using
-strings.  For more sophisticated queries a ``pypika.Table`` must be used.
+strings.  For more sophisticated queries a ``pysqlbuilder.Table`` must be used.
 
 .. code-block:: python
 
@@ -65,7 +65,7 @@ To convert the query into raw SQL, it can be cast to a string.
 
     str(q)
 
-Using ``pypika.Table``
+Using ``pysqlbuilder.Table``
 
 .. code-block:: python
 
@@ -82,7 +82,7 @@ Results can be ordered by using the following syntax:
 
 .. code-block:: python
 
-    from pypika import Order
+    from pysqlbuilder import Order
     Query.from_('customers').select('id', 'fname', 'lname', 'phone').orderby('id', order=Order.desc)
 
 This results in the following SQL:
@@ -94,12 +94,12 @@ This results in the following SQL:
 Arithmetic
 """"""""""
 
-Arithmetic expressions can also be constructed using pypika.  Operators such as `+`, `-`, `*`, and `/` are implemented
-by ``pypika.Field`` which can be used simply with a ``pypika.Table`` or directly.
+Arithmetic expressions can also be constructed using pysqlbuilder.  Operators such as `+`, `-`, `*`, and `/` are implemented
+by ``pysqlbuilder.Field`` which can be used simply with a ``pysqlbuilder.Table`` or directly.
 
 .. code-block:: python
 
-    from pypika import Field
+    from pysqlbuilder import Field
 
     q = Query.from_('account').select(
         Field('revenue') - Field('cost')
@@ -109,7 +109,7 @@ by ``pypika.Field`` which can be used simply with a ``pypika.Table`` or directly
 
     SELECT revenue-cost FROM accounts
 
-Using ``pypika.Table``
+Using ``pysqlbuilder.Table``
 
 .. code-block:: python
 
@@ -155,7 +155,7 @@ More arithmetic examples
 Filtering
 """""""""
 
-Queries can be filtered with ``pypika.Criterion`` by using equality or inequality operators
+Queries can be filtered with ``pysqlbuilder.Criterion`` by using equality or inequality operators
 
 .. code-block:: python
 
@@ -258,7 +258,7 @@ Grouping allows for aggregated results and works similar to ``SELECT`` clauses.
 
 .. code-block:: python
 
-    from pypika import functions as fn
+    from pysqlbuilder import functions as fn
 
     customers = Table('customers')
     q = Query.from_(customers).where(
@@ -278,7 +278,7 @@ After adding a ``GROUP BY`` clause to a query, the ``HAVING`` clause becomes ava
 
 .. code-block:: python
 
-    from pypika import functions as fn
+    from pysqlbuilder import functions as fn
 
     payments = Table('payments')
     q = Query.from_(payments).where(
@@ -401,12 +401,12 @@ union all, use ``Query.union_all()`` or the `*` operator.
 Date, Time, and Intervals
 """""""""""""""""""""""""
 
-Using ``pypika.Interval``, queries can be constructed with date arithmetic.  Any combination of intervals can be
+Using ``pysqlbuilder.Interval``, queries can be constructed with date arithmetic.  Any combination of intervals can be
 used except for weeks and quarters, which must be used separately and will ignore any other values if selected.
 
 .. code-block:: python
 
-    from pypika import functions as fn
+    from pysqlbuilder import functions as fn
 
     fruits = Tables('fruits')
     q = Query.from_(fruits) \
@@ -421,12 +421,12 @@ used except for weeks and quarters, which must be used separately and will ignor
 Tuples
 """"""
 
-Tuples are supported through the class ``pypika.Tuple`` but also through the native python tuple wherever possible.
-Tuples can be used with ``pypika.Criterion`` in **WHERE** clauses for pairwise comparisons.
+Tuples are supported through the class ``pysqlbuilder.Tuple`` but also through the native python tuple wherever possible.
+Tuples can be used with ``pysqlbuilder.Criterion`` in **WHERE** clauses for pairwise comparisons.
 
 .. code-block:: python
 
-    from pypika import Query, Tuple
+    from pysqlbuilder import Query, Tuple
 
     q = Query.from_(self.table_abc) \
         .select(self.table_abc.foo, self.table_abc.bar) \
@@ -436,11 +436,11 @@ Tuples can be used with ``pypika.Criterion`` in **WHERE** clauses for pairwise c
 
     SELECT "foo","bar" FROM "abc" WHERE ("foo","bar")=(1,2)
 
-Using ``pypika.Tuple`` on both sides of the comparison is redundant and |Brand| supports native python tuples.
+Using ``pysqlbuilder.Tuple`` on both sides of the comparison is redundant and |Brand| supports native python tuples.
 
 .. code-block:: python
 
-    from pypika import Query, Tuple
+    from pysqlbuilder import Query, Tuple
 
     q = Query.from_(self.table_abc) \
         .select(self.table_abc.foo, self.table_abc.bar) \
@@ -467,11 +467,11 @@ Strings Functions
 """""""""""""""""
 
 There are several string operations and function wrappers included in |Brand|.  Function wrappers can be found in the
-``pypika.functions`` package.  In addition, `LIKE` and `REGEX` queries are supported as well.
+``pysqlbuilder.functions`` package.  In addition, `LIKE` and `REGEX` queries are supported as well.
 
 .. code-block:: python
 
-    from pypika import functions as fn
+    from pysqlbuilder import functions as fn
 
     customers = Tables('customers')
     q = Query.from_(customers).select(
@@ -488,7 +488,7 @@ There are several string operations and function wrappers included in |Brand|.  
 
 .. code-block:: python
 
-    from pypika import functions as fn
+    from pysqlbuilder import functions as fn
 
     customers = Tables('customers')
     q = Query.from_(customers).select(
@@ -506,7 +506,7 @@ There are several string operations and function wrappers included in |Brand|.  
 
 .. code-block:: python
 
-    from pypika import functions as fn
+    from pysqlbuilder import functions as fn
 
     customers = Tables('customers')
     q = Query.from_(customers).select(
@@ -529,7 +529,7 @@ using the ``when`` method and to set the default value using ``else_``.
 
 .. code-block:: python
 
-    from pypika import Case, functions as fn
+    from pysqlbuilder import Case, functions as fn
 
     customers = Tables('customers')
     q = Query.from_(customers).select(
@@ -617,7 +617,7 @@ builder chain.
 
 Updating Data
 ^^^^^^^^^^^^^^
-PyPika allows update queries to be constructed with or without where clauses.
+pysqlbuilder allows update queries to be constructed with or without where clauses.
 
 .. code-block:: python
 
@@ -664,22 +664,22 @@ Crafted with ♥ in Berlin.
 
 .. _appendix_start:
 
-.. |Brand| replace:: *PyPika*
+.. |Brand| replace:: *pysqlbuilder*
 
 .. _appendix_end:
 
 .. _available_badges_start:
 
-.. |BuildStatus| image:: https://travis-ci.org/kayak/pypika.svg?branch=master
-   :target: https://travis-ci.org/kayak/pypika
-.. |CoverageStatus| image:: https://coveralls.io/repos/kayak/pypika/badge.svg?branch=master&service=github
-   :target: https://coveralls.io/github/kayak/pypika?branch=master
+.. |BuildStatus| image:: https://travis-ci.org/kayak/pysqlbuilder.svg?branch=master
+   :target: https://travis-ci.org/kayak/pysqlbuilder
+.. |CoverageStatus| image:: https://coveralls.io/repos/kayak/pysqlbuilder/badge.svg?branch=master&service=github
+   :target: https://coveralls.io/github/kayak/pysqlbuilder?branch=master
 .. |Codacy| image:: https://api.codacy.com/project/badge/Grade/6d7e44e5628b4839a23da0bd82eaafcf
-   :target: https://www.codacy.com/app/twheys/pypika
-.. |Docs| image:: https://readthedocs.org/projects/pypika/badge/?version=latest
-   :target: http://pypika.readthedocs.io/en/latest/
-.. |PyPi| image:: https://img.shields.io/pypi/v/pypika.svg?style=flat
-   :target: https://pypi.python.org/pypi/pypika
+   :target: https://www.codacy.com/app/twheys/pysqlbuilder
+.. |Docs| image:: https://readthedocs.org/projects/pysqlbuilder/badge/?version=latest
+   :target: http://pysqlbuilder.readthedocs.io/en/latest/
+.. |PyPi| image:: https://img.shields.io/pypi/v/pysqlbuilder.svg?style=flat
+   :target: https://pypi.python.org/pypi/pysqlbuilder
 .. |License| image:: https://img.shields.io/hexpm/l/plug.svg?maxAge=2592000
    :target: http://www.apache.org/licenses/LICENSE-2.0
 

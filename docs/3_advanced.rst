@@ -7,7 +7,7 @@ Advanced Query Features
 
 This section covers the range of functions that are not widely standardized across all SQL databases or meet special
 needs.  |Brand| intends to support as many features across different platforms as possible.  If there are any features
-specific to a certain platform that PyPika does not support, please create a GitHub issue requesting that it be added.
+specific to a certain platform that pysqlbuilder does not support, please create a GitHub issue requesting that it be added.
 
 
 Handling different database platforms
@@ -19,7 +19,7 @@ the platform-specific Query classes can be used.
 
 .. code-block:: python
 
-    from pypika import MySQLQuery, MSSQLQuery, PostgreSQLQuery, OracleQuery, VerticaQuery
+    from pysqlbuilder import MySQLQuery, MSSQLQuery, PostgreSQLQuery, OracleQuery, VerticaQuery
 
 You can use these query classes as a drop in replacement for the default ``Query`` class shown in the other examples.
 Again, if you encounter any issues specific to a platform, please create a GitHub issue on this repository.
@@ -31,7 +31,7 @@ The `ROLLUP` modifier allows for aggregating to higher levels that the given gro
 
 .. code-block:: python
 
-    from pypika import Rollup, functions as fn
+    from pysqlbuilder import Rollup, functions as fn
 
     products = Table('products')
 
@@ -47,7 +47,7 @@ The `ROLLUP` modifier allows for aggregating to higher levels that the given gro
 Analytic Queries
 ----------------
 
-The package ``pypika.analytic`` contains analytic function wrappers.  These can be used in ``SELECT`` clauses when
+The package ``pysqlbuilder.analytic`` contains analytic function wrappers.  These can be used in ``SELECT`` clauses when
 building queries for databases that support them. Different functions have different arguments but all require some sort
 of partitioning.
 
@@ -59,7 +59,7 @@ clause.
 
 .. code-block:: python
 
-    from pypika import Query, Table, analytics as an, functions as fn
+    from pysqlbuilder import Query, Table, analytics as an, functions as fn
 
     store_sales_fact, date_dimension = Table('store_sales_fact', schema='store'), Table('date_dimension')
 
@@ -85,7 +85,7 @@ clause.
 
 .. code-block:: python
 
-    from pypika import Query, Table, analytics as an
+    from pysqlbuilder import Query, Table, analytics as an
 
     t_month = Table('t_month')
 
@@ -113,7 +113,7 @@ These functions take one or more arguments
 
 .. code-block:: python
 
-    from pypika import Query, Table, analytics as an
+    from pysqlbuilder import Query, Table, analytics as an
 
     customer_dimension = Table('customer_dimension')
 
@@ -143,7 +143,7 @@ following the current row by omitting the ``constant_value`` parameter like ``an
 
 .. code-block:: python
 
-    from pypika import Query, Table, analytics as an
+    from pysqlbuilder import Query, Table, analytics as an
 
     t_transactions = Table('t_customers')
 

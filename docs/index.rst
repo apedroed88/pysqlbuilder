@@ -1,4 +1,4 @@
-PyPika - Python Query Builder
+pysqlbuilder - Python Query Builder
 =============================
 
 .. include:: ../README.rst

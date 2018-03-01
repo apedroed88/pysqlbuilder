@@ -1,4 +1,4 @@
-Extending PyPika
+Extending pysqlbuilder
 ----------------
 
 .. include:: ../README.rst
@@ -6,8 +6,8 @@ Extending PyPika
     :end-before:  _appendix_end:
 
 
-PyPika can be extended to include additional features that are not included.
+pysqlbuilder can be extended to include additional features that are not included.
 
-Adding functions can be achieved by extending ``pypika.Function``.
+Adding functions can be achieved by extending ``pysqlbuilder.Function``.
 
 WRITEME

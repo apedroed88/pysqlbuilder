@@ -1,9 +1,9 @@
 # coding: utf8
-from pypika.enums import (
+from pysqlbuilder.enums import (
     JoinType,
     UnionType,
 )
-from pypika.utils import (
+from pysqlbuilder.utils import (
     JoinException,
     RollupException,
     UnionException,
@@ -98,7 +98,7 @@ def make_tables(*names, **kwargs):
 
 class Query(object):
     """
-    Query is the primary class and entry point in pypika. It is used to build queries iteratively using the builder design
+    Query is the primary class and entry point in pysqlbuilder. It is used to build queries iteratively using the builder design
     pattern.
 
     This class is immutable.
@@ -172,7 +172,7 @@ class Query(object):
 
 class QueryBuilder(Selectable, Term):
     """
-    Query Builder is the main class in pypika which stores the state of a query and offers functions which allow the
+    Query Builder is the main class in pysqlbuilder which stores the state of a query and offers functions which allow the
     state to be branched immutably.
     """
 

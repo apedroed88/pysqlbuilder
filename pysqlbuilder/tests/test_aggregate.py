@@ -1,8 +1,8 @@
 # coding: utf-8
 import unittest
 
-from pypika import Case , Field, functions as fn
-from pypika.terms import ValueWrapper
+from pysqlbuilder import Case, Field, functions as fn
+from pysqlbuilder.terms import ValueWrapper
 
 
 class IsAggregateTests(unittest.TestCase):

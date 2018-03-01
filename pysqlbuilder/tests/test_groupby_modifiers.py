@@ -1,7 +1,7 @@
 # coding: utf-8
 import unittest
 
-from pypika import Table, Query, Rollup, functions as fn, RollupException
+from pysqlbuilder import Table, Query, Rollup, functions as fn, RollupException
 
 __author__ = "Timothy Heys"
 __email__ = "theys@kayak.com"

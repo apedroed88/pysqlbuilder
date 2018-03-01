@@ -1,7 +1,7 @@
 # coding: utf8
 import unittest
 
-from pypika import (
+from pysqlbuilder import (
     Case,
     CaseException,
     DatePart,
@@ -12,7 +12,7 @@ from pypika import (
     VerticaQuery,
     functions as fn,
 )
-from pypika.enums import (
+from pysqlbuilder.enums import (
     Dialects,
     SqlTypes,
 )

@@ -2,9 +2,9 @@
 """
 Package for SQL analytic functions wrappers
 """
-from pypika.terms import (AnalyticFunction,
-                          WindowFrameAnalyticFunction,
-                          IgnoreNullsAnalyticFunction)
+from pysqlbuilder.terms import (AnalyticFunction,
+                                WindowFrameAnalyticFunction,
+                                IgnoreNullsAnalyticFunction)
 
 __author__ = "Timothy Heys"
 __email__ = "theys@kayak.com"

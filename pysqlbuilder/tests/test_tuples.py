@@ -2,7 +2,7 @@
 
 import unittest
 
-from pypika import Query, Tables, Tuple
+from pysqlbuilder import Query, Tables, Tuple
 
 
 class TupleTests(unittest.TestCase):

@@ -2,15 +2,15 @@
 """
 Package for SQL functions wrappers
 """
-from pypika.enums import (
+from pysqlbuilder.enums import (
     SqlTypes,
 )
-from pypika.terms import (
+from pysqlbuilder.terms import (
     AggregateFunction,
     Function,
     Star,
 )
-from pypika.utils import builder
+from pysqlbuilder.utils import builder
 
 __author__ = "Timothy Heys"
 __email__ = "theys@kayak.com"

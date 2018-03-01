@@ -5,14 +5,14 @@ from datetime import date
 
 from aenum import Enum
 
-from pypika.enums import (
+from pysqlbuilder.enums import (
     Arithmetic,
     Boolean,
     Dialects,
     Equality,
     Matching,
 )
-from pypika.utils import (
+from pysqlbuilder.utils import (
     CaseException,
     alias_sql,
     builder,

@@ -2,8 +2,8 @@
 import unittest
 from datetime import date, datetime
 
-from pypika import Field, Table, functions as fn
-from pypika.terms import Mod
+from pysqlbuilder import Field, Table, functions as fn
+from pysqlbuilder.terms import Mod
 
 __author__ = "Timothy Heys"
 __email__ = "theys@kayak.com"

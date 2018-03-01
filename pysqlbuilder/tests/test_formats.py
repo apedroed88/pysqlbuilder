@@ -1,7 +1,7 @@
 # coding: utf-8
 import unittest
 
-from pypika import Query, Tables, functions as fn
+from pysqlbuilder import Query, Tables, functions as fn
 
 
 class QuoteTests(unittest.TestCase):
