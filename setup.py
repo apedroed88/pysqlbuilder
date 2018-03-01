@@ -57,7 +57,7 @@ setup(
     include_package_data=True,
 
     # Details
-    url="https://github.com/kayak/pysqlbuilder",
+    url="https://github.com/apedroed88/pysqlbuilder",
 
     description="A SQL query builder API for Python",
     long_description=readme(),
