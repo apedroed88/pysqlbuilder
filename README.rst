@@ -1,13 +1,8 @@
 pysqlbuilder - Python Query Builder
 =============================
 
-.. _intro_start:
 
-|BuildStatus|  |CoverageStatus|  |Codacy|  |Docs|  |PyPi|  |License|
-
-Abstract
---------
-
+[![Build Status](https://travis-ci.org/apedroed88/pysqlbuilder.svg?branch=master)](https://travis-ci.org/apedroed88/pysqlbuilder)
 What is |Brand|?
 
 |Brand| is a PyPika fork for building SQL queries. The motivation behind |Brand| is to provide a simple interface for
