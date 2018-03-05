@@ -1,7 +1,7 @@
 pysqlbuilder - Python Query Builder
 =============================
-[![Build Status](https://travis-ci.org/apedroed88/pysqlbuilder.svg?branch=master)](https://travis-ci.org/apedroed88/pysqlbuilder)
-[![Documentation Status](https://readthedocs.org/projects/pysqlbuilder/badge/?version=latest)](http://pysqlbuilder.readthedocs.io/en/latest/?badge=latest)
+![Build Status](https://travis-ci.org/apedroed88/pysqlbuilder.svg?branch=master)
+![Documentation Status](https://readthedocs.org/projects/pysqlbuilder/badge/?version=latest)
 
 
 What is |Brand|?
